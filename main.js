@@ -12,26 +12,21 @@ function hit(){
    //get a true or false value randomly
     var random = Math.random();
     if(random<0.5){
-        player1++;
+        player1_health=   player1_health - 20 ;
+        player2++;
         console.log(20-player1_health);
-        document.getElementById("player1_stat").innerHTML = player1;
-        document.getElementById("player1_health").innerHTML =player1_health - 10 ;
-        //shake the player1_ image
-        document.querySelector('img[alt="player1"]').style.animation = 'shake 0.5s';
-        setTimeout(function(){
-            document.querySelector('img[alt="player1"]').style.animation = "";
-        },500);
+        document.getElementById("player1_stat").innerHTML=player2;
+        document.getElementById("player2_health").innerHTML =player1_health  ;
+  
 
 
     }else{
-        player2++;
+        player2_health=   player2_health - 20 ;
+        player1++;
         console.log(20-player2_health);
-        document.getElementById("player2_stat").innerHTML=player2;
-        document.getElementById("player2_health").innerHTML =player2_health - 10;
-        document.querySelector('img[alt="player2"]').style.animation = "shake 0.5s";
-        setTimeout(function(){
-            document.querySelector('img[alt="player2"]').style.animation = "";
-        },500);
+        document.getElementById("player2_stat").innerHTML=player1;
+        document.getElementById("player1_health").innerHTML =player2_health ;
+ 
     }
    
     stage ++;
@@ -48,7 +43,7 @@ else{
         document.getElementById("player1_health").style.fontFamily = "Impact";
         document.getElementById("player1_health").style.fontStyle = "italic";
         document.getElementById("player1_health").style.textShadow = "2px 2px black";
-        document.getElementById("player1_health").innerHTML = "Player 2 Wins!";
+        document.getElementById("player1_health").innerHTML = "Player 1 Wins!";
     }
     else{
         document.getElementById("player2_health").innerHTML = "0";
@@ -61,7 +56,7 @@ else{
         document.getElementById("player2_health").style.fontFamily = "Impact";
         document.getElementById("player2_health").style.fontStyle = "italic";
         document.getElementById("player2_health").style.textShadow = "2px 2px black";
-        document.getElementById("player2_health").innerHTML = "Player 1 Wins!";
+        document.getElementById("player2_health").innerHTML = "Player 2 Wins!";
     }
 }
 
